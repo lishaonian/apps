@@ -1,0 +1,13 @@
+Name: user-rpc
+ListenOn: 0.0.0.0:9000
+Mode: dev
+Log:
+  ServiceName: user-rpc
+  Mode: console
+  Level: error
+DB:
+  DataSource: root:123456@tcp(127.0.0.1:3306)/user?charset=utf8mb4&parseTime=true&loc=Asia%2FShanghai
+CacheRedis:
+  - Host: 192.168.201.107:6379
+    Type: node
+    Pass:

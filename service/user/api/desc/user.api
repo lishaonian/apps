@@ -1,0 +1,36 @@
+syntax = "v1"
+
+info(
+	title: "用户实例"
+	desc: "用户实例"
+	author: "ls"
+	email: "1214943936@qq.com"
+)
+type (
+	userReq {
+		Id int64 `path:"id"`
+	}
+	userResp {
+		Id   int64  `json:"id"`
+		Name string `json:"name"`
+		Age  int64  `json:"age"`
+	}
+)
+type userUpdateReq {
+	Id   int64  `form:"id"`
+	Name string `form:"name"`
+}
+@server(
+	group:user
+)
+
+service user{
+	@doc "查看用户"
+	@handler getUser
+	get /user/getUser/:id(userReq) returns (userResp)
+	
+	@doc "修改用户"
+	@handler updateUser
+	post /user/updateUser(userUpdateReq) returns (bool)
+	
+}

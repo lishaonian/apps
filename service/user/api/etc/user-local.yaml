@@ -1,0 +1,12 @@
+Name: user
+Host: 0.0.0.0
+Port: 8000
+DB:
+  DataSource: root:123456@tcp(192.168.201.107:3306)/user?charset=utf8mb4&parseTime=true&loc=Asia%2FShanghai
+UserRpc:
+  Endpoints:
+    - 127.0.0.1:9000
+Log:
+  ServiceName: user-api
+  Mode: console
+  Level: error
